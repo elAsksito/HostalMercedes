@@ -1,0 +1,56 @@
+# Ignorar la configuracion de Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Ignorar archivos de compilacion y temporales
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.o
+*.iobj
+*.ipdb
+*.log
+
+# Ignorar paquetes y dependencias
+packages/
+node_modules/
+wwwroot/lib/
+
+# Ignorar configuraciones sensibles
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Staging.json
+appsettings.Production.json
+appsettings.*.json
+secrets.json
+
+# Ignorar archivos de pruebas y logs
+TestResults/
+*.log
+logs/
+*.lastcodeanalysissucceeded
+*.cache
+
+# Ignorar archivos de Docker
+.dockerignore
+**/[Dd]ockerfile*
+**/docker-compose*
+
+# Ignorar configuracion de publicacion
+publish/
+*.publish/
+*.deploy/
+
+# Ignorar archivos de cobertura de codigo
+coverage/
+*.coverage
+*.coveragexml
+*.cov
+lcov-report/
