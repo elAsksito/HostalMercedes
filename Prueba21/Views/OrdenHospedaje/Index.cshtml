@@ -42,16 +42,18 @@
                             </button>
                         </form>
                     }
-
+                    @if (User.IsInRole("Administrador") || User.IsInRole("Recepcionista"))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.OrdenHospedajeId" class="btn btn-sm btn-info">
+                            <i class="fas fa-eye"></i> Detalles
+                        </a>
+                    }
                     @if (User.IsInRole("Administrador"))
                     {
                         <a asp-action="Delete" asp-route-id="@item.OrdenHospedajeId" class="btn btn-sm btn-danger">
                             <i class="fas fa-trash"></i> Eliminar
                         </a>
                     }
-                   
-
-
                 </td>
             </tr>
         }

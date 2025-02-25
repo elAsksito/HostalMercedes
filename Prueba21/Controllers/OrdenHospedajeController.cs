@@ -21,6 +21,16 @@ namespace Prueba21.Controllers
             return View(ordenes);
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            var ordenHospedaje = await _service.ObtenerOrdenHospedajePorIdAsync(id);
+            if (ordenHospedaje == null)
+            {
+                return NotFound();
+            }
+            return View(ordenHospedaje);
+        }
+
         public async Task<IActionResult> Create()
         {
             var listasDeSeleccion = await _service.ObtenerListasDeSeleccionAsync();
