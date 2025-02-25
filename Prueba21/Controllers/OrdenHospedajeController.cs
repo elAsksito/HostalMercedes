@@ -71,6 +71,23 @@ namespace Prueba21.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return BadRequest("NO existe valor en el ID");
+            }
+
+            try
+            {
+                var ordenHospedaje = await _service.ObtenerOrdenHospedajePorIdAsync(id.Value);
+                return View(ordenHospedaje);
+            } catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
         [HttpPost, ActionName("Delete")]
         [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> DeleteConfirmed(int id)

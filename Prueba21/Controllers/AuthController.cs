@@ -55,6 +55,7 @@ namespace Prueba21.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
         [Authorize]
         public async Task<IActionResult> Logout()
         {

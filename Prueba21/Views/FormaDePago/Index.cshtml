@@ -24,7 +24,8 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td class="fw-bold">@item.Nombre</td>
+                <td >@item.Nombre</td>
+
                 <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.FormaDePagoId" class="btn btn-sm btn-warning">
                         <i class="fas fa-edit"></i> Editar
